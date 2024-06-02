@@ -49,7 +49,7 @@ jobs:
           files: .artifacts/code-coverage.lcov
 
       - name: Publish Dry Run
-        run: deno publish --dry-run --allow-dirty
+        run: deno publish --dry-run
 
   publish:
     runs-on: ubuntu-latest

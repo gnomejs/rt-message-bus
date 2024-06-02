@@ -19,7 +19,9 @@
             "mod.ts",
             "message.ts",
             "bus.ts",
-            "logging-bus.ts"
+            "logging-bus.ts",
+            "README.md",
+            "LICENSE.md"
         ]
     },
 
