@@ -1,0 +1,33 @@
+{
+    "name": "@rt/message-bus",
+    "version": "0.0.0",
+    "exports": {
+        ".": "./mod.ts",
+        "./message": "./message.ts",
+        "./bus": "./bus.ts",
+        "./logging-bus": "./logging-bus.ts"
+    },
+
+    "fmt": {
+        "lineWidth": 120,
+        "indentWidth": 4,
+        "exclude": ["**/*.md"]
+    },
+
+    "publish": {
+        "include": [
+            "mod.ts",
+            "message.ts",
+            "bus.ts",
+            "logging-bus.ts"
+        ]
+    },
+
+    "tasks": {
+        "test": "deno test -A",
+        "coverage": "deno test --coverage=.artifacts/code-coverage -A",
+        "lcov": "deno coverage .artifacts/code-coverage --lcov > .artifacts/code-coverage.lcov",
+        "publish:test": "deno publish --dry-run --allow-dirty",
+        "prep": "deno fmt && deno lint && deno task test && deno task publish:test"
+    }
+}
